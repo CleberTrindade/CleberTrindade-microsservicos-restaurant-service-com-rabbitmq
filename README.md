@@ -5,7 +5,7 @@
 
 Restaurante Service - Foram desenvolvidos 2 microservices, com o intuito de aplicação de conceitos de comunicação assíncrona, utilizando o RabbitMq.
 
-Os serviços consistem em efetuar o cadastro do Restaurantes pelo primeiro serviço restaurante-service, em seguida, uma mensagem é enviada para o segundo serviço item-service, que por sua vez, recebe a mensagem e atualiza sua base de dados, além dos das suas responsábilidades de cadastro e consulta de itens do restaurante.
+Os serviços consistem em efetuar o cadastro dos Restaurantes pelo primeiro serviço restaurante-service, em seguida, uma mensagem é enviada para o segundo serviço item-service, que por sua vez, recebe a mensagem e atualiza sua base de dados, além de executar suas responsábilidades de cadastro e consulta de itens do restaurante.
 
 ## Layout restaurante-service
 ![service 1](https://github.com/CleberTrindade/microsservico-restaurant-service-com-rabbitmq/blob/desenv/assets/restaurant-service.JPG)
