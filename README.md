@@ -47,7 +47,7 @@ git clone https://github.com/CleberTrindade/microsservico-restaurant-service-com
   - docker build -t itemservice:1.0 .
   - docker run --name item-service -d -p 8080:80 --network restaurante-bridge itemservice:1.0
 
-# entrar na pasta do projeto item-service
+# entrar na pasta do projeto restauranteservice
   cd ..
   cd restauranteservice
   - docker build -t restauranteservice:1.0 .
