@@ -3,7 +3,7 @@
 
 # Sobre o projeto
 
-Restaurante Service - Foram desenvolvidos 2 microservices, com o intuito de aplicação de conceitos de comunicação assíncrona, utilizando o RabbitMq.
+Restaurante Service - Foram desenvolvidos 2 microservices, seguindo as orientações do Curso: Microsserviços e .NET6: implementando a comunicação - na plataforma da Alura, com o intuito de aplicação de conceitos de comunicação assíncrona, utilizando o RabbitMq.
 
 Os serviços consistem em efetuar o cadastro dos Restaurantes pelo primeiro serviço restaurante-service, em seguida, uma mensagem é enviada para o segundo serviço item-service, que por sua vez, recebe a mensagem e atualiza sua base de dados, além de executar suas responsábilidades de cadastro e consulta de itens do restaurante.
 
