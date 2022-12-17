@@ -1,8 +1,8 @@
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
-using ItemService.Dtos;
-using ItemService.Data;
-using ItemService.Models;
+using ItemService.Core.Interfaces.Repository;
+using ItemService.Application.Dtos;
+using ItemService.Core.Models;
 
 namespace ItemService.Controllers;
 

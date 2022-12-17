@@ -1,10 +1,9 @@
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
-using RestauranteService.Data;
-using RestauranteService.Dtos;
-using RestauranteService.Interfaces.RabbitMqClient;
-using RestauranteService.ItemServiceHttpClient;
-using RestauranteService.Models;
+using RestauranteService.Application.Dtos;
+using RestauranteService.Core.Interfaces.Repository;
+using RestauranteService.Core.Interfaces.Services;
+using RestauranteService.Core.Models;
 
 namespace RestauranteService.Controllers;
 

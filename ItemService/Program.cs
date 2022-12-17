@@ -1,6 +1,8 @@
-using ItemService.Data;
-using ItemService.EventProcessor;
-using ItemService.RabbitMqClient;
+using ItemService.Application.Services.EventProcessor;
+using ItemService.Application.Services.RabbitMqClient;
+using ItemService.Core.Interfaces.Repository;
+using ItemService.Core.Interfaces.Services;
+using ItemService.Infra.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 

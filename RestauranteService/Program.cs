@@ -1,8 +1,10 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
-using RestauranteService.Data;
-using RestauranteService.Interfaces.RabbitMqClient;
-using RestauranteService.ItemServiceHttpClient;
+using RestauranteService.Application.Services.ItemServiceHttpClient;
+using RestauranteService.Application.Services.RabbitMqClient;
+using RestauranteService.Core.Interfaces.Repository;
+using RestauranteService.Core.Interfaces.Services;
+using RestauranteService.Infra.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
