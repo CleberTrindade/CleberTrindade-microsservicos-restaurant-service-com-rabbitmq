@@ -26,7 +26,8 @@ namespace RestauranteService.Data
 
         public IEnumerable<Restaurante> GetAllRestaurantes()
         {
-            return _context.Restaurantes.ToList();
+			Console.WriteLine("Cheguei no Repositorio - GetAllRestaurantes");
+			return _context.Restaurantes.ToList();
         }
 
         public Restaurante GetRestauranteById(int id) => _context.Restaurantes.FirstOrDefault(c => c.Id == id);

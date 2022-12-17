@@ -2,6 +2,7 @@ using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using RestauranteService.Data;
 using RestauranteService.Dtos;
+using RestauranteService.Interfaces.RabbitMqClient;
 using RestauranteService.ItemServiceHttpClient;
 using RestauranteService.Models;
 
@@ -14,22 +15,25 @@ public class RestauranteController : ControllerBase
     private readonly IRestauranteRepository _repository;
     private readonly IMapper _mapper;
     private IItemServiceHttpClient _itemServiceHttpClient;
+	private IRabbitMqClient _rabbitMqClient;
 
-    public RestauranteController(
-        IRestauranteRepository repository,
-        IMapper mapper, 
-        IItemServiceHttpClient itemServiceHttpClient)
-    {
-        _repository = repository;
-        _mapper = mapper;
-        _itemServiceHttpClient = itemServiceHttpClient;
-    }
+	public RestauranteController(
+		IRestauranteRepository repository,
+		IMapper mapper,
+		IItemServiceHttpClient itemServiceHttpClient,
+		IRabbitMqClient rabbitMqClient)
+	{
+		_repository = repository;
+		_mapper = mapper;
+		_itemServiceHttpClient = itemServiceHttpClient;
+		_rabbitMqClient = rabbitMqClient;
+	}
 
-    [HttpGet]
+	[HttpGet]
     public ActionResult<IEnumerable<RestauranteReadDto>> GetAllRestaurantes()
     {
-
-        var restaurantes = _repository.GetAllRestaurantes();
+		Console.WriteLine("Cheguei na controller");
+		var restaurantes = _repository.GetAllRestaurantes();
 
         return Ok(_mapper.Map<IEnumerable<RestauranteReadDto>>(restaurantes));
     }
@@ -55,8 +59,11 @@ public class RestauranteController : ControllerBase
 
         var restauranteReadDto = _mapper.Map<RestauranteReadDto>(restaurante);
 
-        _itemServiceHttpClient.EnviaRestauranteParaItemService(restauranteReadDto);
+        //Comunicação síncrona
+        //_itemServiceHttpClient.EnviaRestauranteParaItemService(restauranteReadDto);
 
+        //Comunicação Assíncrona
+        _rabbitMqClient.PublicarRestaurante(restauranteReadDto);
 
         return CreatedAtRoute(nameof(GetRestauranteById), new { restauranteReadDto.Id }, restauranteReadDto);
     }
