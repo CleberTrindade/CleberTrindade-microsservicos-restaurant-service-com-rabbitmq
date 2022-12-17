@@ -1,7 +1,6 @@
-﻿namespace ItemService.Core.Interfaces.Services
+﻿namespace ItemService.Core.Interfaces.Services;
+
+public interface IProcessaEvento
 {
-    public interface IProcessaEvento
-    {
-        void Processa(string mensagem);
-    }
+    void Processa(string mensagem);
 }

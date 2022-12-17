@@ -1,9 +1,8 @@
 ﻿using RestauranteService.Application.Dtos;
 
-namespace RestauranteService.Core.Interfaces.Services
+namespace RestauranteService.Core.Interfaces.Services;
+
+public interface IRabbitMqClient
 {
-    public interface IRabbitMqClient
-    {
-        void PublicarRestaurante(RestauranteReadDto restauranteReadDto);
-    }
+    void PublicarRestaurante(RestauranteReadDto restauranteReadDto);
 }
