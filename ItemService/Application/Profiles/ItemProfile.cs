@@ -13,5 +13,7 @@ public class ItemProfile : Profile
         CreateMap<Restaurante, RestauranteReadDto>();
         CreateMap<ItemCreateDto, Item>();
         CreateMap<Item, ItemCreateDto>();
+        CreateMap<Item, ItemReadDto>();
+        CreateMap<ItemReadDto, Item>();
     }
 }

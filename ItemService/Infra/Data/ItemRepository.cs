@@ -14,7 +14,8 @@ public class ItemRepository : IItemRepository
 
     public void CreateItem(int restauranteId, Item item)
     {
-        item.IdRestaurante = restauranteId;
+		Console.WriteLine($"ItemRepository: {restauranteId}");
+		item.IdRestaurante = restauranteId;
         _context.Itens.Add(item);
     }
 
